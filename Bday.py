@@ -19,9 +19,11 @@ def simulate_birthday_paradox(num_bits, num_trials):
                 seen.add(value)
 
     avg_steps = sum(attempt_nums) / len(attempt_nums)
+    theoretical = math.sqrt(math.pi / 2) * math.sqrt(space_size)
 
     print(f"Бит: {num_bits}, вариантов: {space_size}")
     print(f"  Среднее число шагов до коллизии: {avg_steps:.2f}")
+    print(f"  Теоретическая оценка (√(πN/2)):  {theoretical:.2f}")
     print(f"  Наивная оценка (√N):             {math.sqrt(space_size):.2f}")
     print()
 
